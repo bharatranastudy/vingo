@@ -25,7 +25,8 @@ import { useEffect } from 'react'
 import { io } from 'socket.io-client'
 import { setSocket } from './redux/userSlice'
 
-export const serverUrl = import.meta.env.VITE_BACKEND_URL || (import.meta.env.MODE === 'development' ? "http://localhost:8000" : "");
+const rawServerUrl = import.meta.env.VITE_BACKEND_URL || (import.meta.env.MODE === 'development' ? "http://localhost:8000" : "");
+export const serverUrl = rawServerUrl.replace(/\/+$/, "");
 function App() {
     const {userData}=useSelector(state=>state.user)
     const dispatch=useDispatch()

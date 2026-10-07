@@ -53,7 +53,7 @@ app.use(cookieParser())
 
 // Root status check
 app.get("/", (req, res) => {
-    res.json({ message: "Vingo API Server is running" })
+    res.json({ message: "MessPro API Server is running" })
 })
 
 // Ensure DB connected on serverless requests
